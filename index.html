@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECHO | Robo Car</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Three + Vanta -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+
+<style>
+body { background:black; overflow-x:hidden; }
+
+/* Glitch */
+.glitch {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: bold;
+  position: relative;
+}
+.glitch::before, .glitch::after {
+  content:"ECHO";
+  position:absolute;
+  left:0;
+}
+.glitch::before { color:red; animation:glitch 1s infinite; }
+.glitch::after { color:blue; animation:glitch 1s infinite reverse; }
+
+@keyframes glitch {
+0%{transform:translate(0)}
+20%{transform:translate(-3px,3px)}
+40%{transform:translate(-3px,-3px)}
+60%{transform:translate(3px,3px)}
+80%{transform:translate(3px,-3px)}
+100%{transform:translate(0)}
+}
+
+/* Glass */
+.glass {
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+/* Neon */
+.neon:hover {
+  color: cyan;
+  text-shadow: 0 0 12px cyan;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-4">
+  <h1 class="glitch text-white">ECHO</h1>
+  <p class="text-gray-300 mt-4 max-w-xl">
+    High-torque Bluetooth controlled robotic vehicle for real-world terrain.
+  </p>
+</section>
+
+<!-- DEMO VIDEOS -->
+<section class="py-16 px-4 text-center">
+  <h2 class="text-3xl text-white mb-10">🎬 Live Demo</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+    <video controls muted loop class="rounded-xl w-full shadow-lg">
+      <source src="assets/demo1.mp4" type="video/mp4">
+    </video>
+
+    <video controls muted loop class="rounded-xl w-full shadow-lg">
+      <source src="assets/demo2.mp4" type="video/mp4">
+    </video>
+
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="py-16 px-4 flex justify-center gap-6 flex-wrap">
+
+  <div class="glass p-6 rounded-xl w-full sm:w-64 text-center tilt-card">
+    <h2 class="text-xl text-white">⚡ Speed</h2>
+    <p class="text-gray-400">Normal 235 and 255 PWM Turbo</p>
+  </div>
+
+  <div class="glass p-6 rounded-xl w-full sm:w-64 text-center tilt-card">
+    <h2 class="text-xl text-white">🔧 Motor</h2>
+    <p class="text-gray-400">Dual 100 RPM</p>
+  </div>
+
+  <div class="glass p-6 rounded-xl w-full sm:w-64 text-center tilt-card">
+    <h2 class="text-xl text-white">🔋 Battery</h2>
+    <p class="text-gray-400">11.1V Li-ion</p>
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+<section class="py-16 px-4">
+  <h2 class="text-3xl text-white text-center mb-10">Gallery</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+    <img src="assets/car1.png" class="gallery rounded-xl w-full">
+    <img src="assets/car2.png" class="gallery rounded-xl w-full">
+    <img src="assets/car3.png" class="gallery rounded-xl w-full">
+    <img src="assets/car4.png" class="gallery rounded-xl w-full">
+    <img src="assets/car5.png" class="gallery rounded-xl w-full">
+
+    <!-- Controller -->
+    <img src="assets/controller.jpeg" class="gallery rounded-xl w-full">
+
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="py-16 px-6 max-w-5xl mx-auto text-center">
+  <h2 class="text-3xl text-red-400 mb-4">🚧 Problem</h2>
+  <p class="text-gray-300">
+    Traditional robotic cars face instability, heating, and control issues under real conditions.
+  </p>
+</section>
+
+<!-- SOLUTION -->
+<section class="py-16 px-6 max-w-5xl mx-auto text-center">
+  <h2 class="text-3xl text-green-400 mb-4">✅ Solution</h2>
+  <p class="text-gray-300">
+    ECHO delivers stable, high torque performance with ESP32 and optimized control system.
+  </p>
+</section>
+
+<!-- V2 -->
+<section class="py-20 text-center border-t border-gray-800">
+  <h2 class="text-4xl text-cyan-300">ECHO V2</h2>
+  <p class="text-gray-400 mt-4">🚧 AI + Autonomous System Coming Soon</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-16 text-center">
+
+  <img src="assets/profile.jpeg"
+       class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border border-cyan-400">
+
+  <p class="text-gray-400">Built by Ayan Ainaf</p>
+
+  <div class="flex justify-center gap-10 mt-6">
+    <a href="https://www.linkedin.com/in/ayan-ainaf" target="_blank" class="neon">LinkedIn</a>
+    <a href="https://github.com/AyanAinaf" target="_blank" class="neon">GitHub</a>
+  </div>
+
+</footer>
+
+<!-- VANTA -->
+<script>
+VANTA.NET({
+  el: "#hero",
+  color: 0x00ffff,
+  backgroundColor: 0x000000,
+  points: window.innerWidth < 768 ? 6 : 10
+});
+</script>
+
+<!-- GSAP -->
+<script>
+gsap.from("section", {
+  opacity: 0,
+  y: 60,
+  duration: 1,
+  stagger: 0.2
+});
+</script>
+
+<!-- TILT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+<script>
+if (window.innerWidth > 768) {
+  VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
+    max: 15,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.3
+  });
+}
+</script>
+
+</body>
+</html>
