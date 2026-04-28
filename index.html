@@ -16,7 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
 
 <style>
-body { background:black; overflow-x:hidden; }
+body { background:black; overflow-x:hidden; font-family:sans-serif; }
 
 /* Glitch */
 .glitch {
@@ -48,10 +48,34 @@ body { background:black; overflow-x:hidden; }
   border:1px solid rgba(255,255,255,0.1);
 }
 
-/* Neon */
+/* Glow hover */
 .neon:hover {
   color: cyan;
   text-shadow: 0 0 12px cyan;
+}
+
+/* Video card */
+.video-card {
+  transition: 0.4s;
+}
+.video-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(0,255,255,0.3);
+}
+
+/* Gallery */
+.gallery {
+  transition: 0.3s;
+}
+.gallery:hover {
+  transform: scale(1.05);
+}
+
+/* Hero overlay */
+.overlay {
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), black);
 }
 </style>
 </head>
@@ -59,36 +83,52 @@ body { background:black; overflow-x:hidden; }
 <body>
 
 <!-- HERO -->
-<section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-4">
-  <h1 class="glitch text-white">ECHO</h1>
-  <p class="text-gray-300 mt-4 max-w-xl">
+<section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-4 relative">
+
+  <div class="overlay"></div>
+
+  <h1 class="glitch text-white z-10">ECHO</h1>
+  <p class="text-gray-300 mt-4 max-w-xl z-10">
     High-torque Bluetooth controlled robotic vehicle for real-world terrain.
   </p>
+
 </section>
 
 <!-- DEMO VIDEOS -->
-<section class="py-16 px-4 text-center">
-  <h2 class="text-3xl text-white mb-10">🎬 Live Demo</h2>
+<section class="py-20 px-4 text-center">
+  <h2 class="text-4xl text-white mb-12">🎬 Live Demo</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-    <video controls muted loop class="rounded-xl w-full shadow-lg">
-      <source src="assets/demo1.mp4" type="video/mp4">
-    </video>
+    <!-- Car Video -->
+    <div class="glass p-3 rounded-xl video-card">
+      <iframe 
+        class="w-full h-[250px] md:h-[400px] rounded-lg"
+        src="https://www.youtube.com/embed/S6DtJ2AgSBw"
+        allowfullscreen>
+      </iframe>
+      <p class="text-gray-400 mt-3">Car Movement</p>
+    </div>
 
-    <video controls muted loop class="rounded-xl w-full shadow-lg">
-      <source src="assets/demo2.mp4" type="video/mp4">
-    </video>
+    <!-- Controller Video -->
+    <div class="glass p-3 rounded-xl video-card">
+      <iframe 
+        class="w-full h-[250px] md:h-[400px] rounded-lg"
+        src="https://www.youtube.com/embed/kIXeqaY7wn8"
+        allowfullscreen>
+      </iframe>
+      <p class="text-gray-400 mt-3">Mobile Controller</p>
+    </div>
 
   </div>
 </section>
 
 <!-- SPECS -->
-<section class="py-16 px-4 flex justify-center gap-6 flex-wrap">
+<section class="py-20 px-4 flex justify-center gap-6 flex-wrap">
 
   <div class="glass p-6 rounded-xl w-full sm:w-64 text-center tilt-card">
     <h2 class="text-xl text-white">⚡ Speed</h2>
-    <p class="text-gray-400">Normal 235 and 255 PWM Turbo</p>
+    <p class="text-gray-400">Normal 235 & 255 PWM Turbo</p>
   </div>
 
   <div class="glass p-6 rounded-xl w-full sm:w-64 text-center tilt-card">
@@ -104,8 +144,8 @@ body { background:black; overflow-x:hidden; }
 </section>
 
 <!-- GALLERY -->
-<section class="py-16 px-4">
-  <h2 class="text-3xl text-white text-center mb-10">Gallery</h2>
+<section class="py-20 px-4">
+  <h2 class="text-4xl text-white text-center mb-12">Gallery</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
@@ -114,15 +154,13 @@ body { background:black; overflow-x:hidden; }
     <img src="assets/car3.png" class="gallery rounded-xl w-full">
     <img src="assets/car4.png" class="gallery rounded-xl w-full">
     <img src="assets/car5.png" class="gallery rounded-xl w-full">
-
-    <!-- Controller -->
     <img src="assets/controller.jpeg" class="gallery rounded-xl w-full">
 
   </div>
 </section>
 
 <!-- PROBLEM -->
-<section class="py-16 px-6 max-w-5xl mx-auto text-center">
+<section class="py-20 px-6 max-w-5xl mx-auto text-center">
   <h2 class="text-3xl text-red-400 mb-4">🚧 Problem</h2>
   <p class="text-gray-300">
     Traditional robotic cars face instability, heating, and control issues under real conditions.
@@ -130,7 +168,7 @@ body { background:black; overflow-x:hidden; }
 </section>
 
 <!-- SOLUTION -->
-<section class="py-16 px-6 max-w-5xl mx-auto text-center">
+<section class="py-20 px-6 max-w-5xl mx-auto text-center">
   <h2 class="text-3xl text-green-400 mb-4">✅ Solution</h2>
   <p class="text-gray-300">
     ECHO delivers stable, high torque performance with ESP32 and optimized control system.
@@ -138,13 +176,13 @@ body { background:black; overflow-x:hidden; }
 </section>
 
 <!-- V2 -->
-<section class="py-20 text-center border-t border-gray-800">
-  <h2 class="text-4xl text-cyan-300">ECHO V2</h2>
-  <p class="text-gray-400 mt-4">🚧 AI + Autonomous System Coming Soon</p>
+<section class="py-24 text-center border-t border-gray-800">
+  <h2 class="text-5xl text-cyan-300">ECHO V2</h2>
+  <p class="text-gray-400 mt-4">🚀 AI + Autonomous System Coming Soon</p>
 </section>
 
 <!-- FOOTER -->
-<footer class="py-16 text-center">
+<footer class="py-20 text-center">
 
   <img src="assets/profile.jpeg"
        class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border border-cyan-400">
@@ -168,13 +206,18 @@ VANTA.NET({
 });
 </script>
 
-<!-- GSAP -->
+<!-- GSAP Scroll Animation -->
 <script>
-gsap.from("section", {
-  opacity: 0,
-  y: 60,
-  duration: 1,
-  stagger: 0.2
+gsap.utils.toArray("section").forEach(sec => {
+  gsap.from(sec, {
+    opacity: 0,
+    y: 80,
+    duration: 1,
+    scrollTrigger: {
+      trigger: sec,
+      start: "top 80%"
+    }
+  });
 });
 </script>
 
