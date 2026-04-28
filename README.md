@@ -1,74 +1,79 @@
-# ⚡ ECHO – Smart Robo Car
+# ⚡ ECHO – Smart Robotic Vehicle
 
-> High-Torque Bluetooth Controlled Robotic Vehicle 🚗💨
+![Status](https://img.shields.io/badge/Status-Active-cyan)
+![Platform](https://img.shields.io/badge/Platform-ESP32-black)
+![Frontend](https://img.shields.io/badge/Frontend-TailwindCSS-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+> High-Torque Bluetooth-Controlled Robotic Platform 🚗💨
 
 ![Banner](assets/car1.png)
 
 ---
 
+## 🌐 Live Demo
+
+🔗 https://ayanainaf.github.io/robo-car-portfolio/
+
+---
+
 ## 📌 Overview
 
-**ECHO V1** is a high-performance robotic vehicle designed for **obstacle navigation and real-world terrain challenges**.
-Built using an **ESP32 microcontroller**, it combines **power electronics, mechanical design, and wireless control** into a compact system.
+**ECHO V1** is a high-performance robotic vehicle engineered for real-world terrain navigation.
+It integrates **embedded systems, power electronics, and mechanical design** into a compact system.
 
 ---
 
 ## 🎯 Problem
 
-Traditional hobby robotics systems struggle with:
-
-* ❌ Low torque under load
-* ❌ Unstable power systems
-* ❌ Poor control precision
-* ❌ Overheating & battery issues
+* Low torque under load
+* Unstable power systems
+* Poor control precision
+* Heating & battery issues
 
 ---
 
 ## ✅ Solution
 
-ECHO solves these with:
-
-* ⚡ High torque 4WD system
+* ⚡ High-torque 4WD system
 * 🔋 Efficient Li-ion power system
 * 📡 Real-time Bluetooth control
-* 🔧 Optimized mechanical structure
+* 🔧 Optimized structure
 
 ---
 
 ## 🚀 Features
 
 * 📡 Bluetooth mobile control
-* ⚡ Turbo mode (high PWM drive)
-* 🛞 Obstacle climbing capability
-* 🔁 Differential drive system
-* 🧩 Modular architecture
+* ⚡ Turbo PWM mode
+* 🛞 Obstacle climbing
+* 🔁 Differential drive
+* 🧩 Modular design
 
 ---
 
 ## ⚙️ Tech Stack
 
-* **Microcontroller:** ESP32
-* **Motor Driver:** BTS7960 (IBT-2)
-* **Motors:** 100 RPM Johnson DC
-* **Battery:** 11.1V Li-ion (3S)
-* **Frontend:** HTML + Tailwind + GSAP
+* ESP32
+* BTS7960 Motor Driver
+* 100 RPM DC Motors
+* 11.1V Li-ion Battery
+* HTML + Tailwind + GSAP
 
 ---
 
-## 🧠 System Architecture
+## 🧠 Architecture
 
 ```
-Mobile App → Bluetooth → ESP32 → Motor Driver → Motors
+Mobile → Bluetooth → ESP32 → Driver → Motors
 ```
 
 ---
 
 ## 🎬 Demo
 
-> Add your demo videos here 👇
-
-* 🚗 Car Movement → `assets/demo1.mp4`
-* 📱 Mobile Controller → `assets/demo2.mp4`
+* 🚗 Car Movement
+* 🎮 Controller UI Simulation
 
 ---
 
@@ -80,44 +85,22 @@ Mobile App → Bluetooth → ESP32 → Motor Driver → Motors
 
 ---
 
-## ⚠️ Challenges Faced
+## ⚠️ Challenges
 
-* 🔌 Loose wiring → unstable system
-* 🔥 Battery heating issues
-* 🔋 Voltage drop under load
-* ☀️ Heat from sunlight (mobile overheating)
-* 🛞 Wheel slipping on obstacles
-* 🔩 Mechanical friction (tight screws)
-* 📡 Limited Bluetooth precision
+* Wiring instability
+* Battery heating
+* Voltage drop
+* Mechanical friction
+* Bluetooth delay
 
 ---
 
-## 🧠 Lessons Learned
+## 🔧 ECHO V2 (Upcoming)
 
-* Power management is critical
-* Wiring quality defines stability
-* Mechanical design impacts performance
-* Controlled speed > maximum speed
-
----
-
-## 🔧 Improvements (ECHO V2)
-
-* ⚡ Better power distribution system
-* 🔋 Higher capacity battery
-* 🧠 Smart PWM control
-* 📡 Faster communication
-* 🛞 Improved grip & weight balance
-* 🌡️ Thermal management
-
----
-
-## 🎯 Future Scope
-
-* 🤖 AI-based obstacle detection
-* 📷 Camera integration (FPV)
-* 🌐 IoT connectivity
-* 🚘 Autonomous navigation
+* Smart PWM control
+* Better battery system
+* AI-based navigation
+* IoT integration
 
 ---
 
@@ -130,16 +113,16 @@ Mobile App → Bluetooth → ESP32 → Motor Driver → Motors
 
 ---
 
-## ⭐ Show Your Support
+## ⭐ Support
 
 If you like this project:
 
-* ⭐ Star the repo
-* 🍴 Fork it
-* 🚀 Share it
+* ⭐ Star
+* 🍴 Fork
+* 🚀 Share
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+Licensed under the MIT License.
